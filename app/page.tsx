@@ -1,165 +1,96 @@
+'use client';
+
 import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
-export default function Home() {
-  
-  // Clean delivery nodes extracted from corporate documentation
-  const deliverables = [
-    { 
-      title: "Brand Strategy & Development", 
-      desc: "Helping brands establish unmistakable corporate identities through comprehensive workshops, level-headed research, and positioning frameworks." 
-    },
-    { 
-      title: "Creative Content & Media Production", 
-      desc: "Developing high-impact Television Commercials (TVC), radio jingles, social media visual campaigns, and outdoor billboard advertisements." 
-    },
-    { 
-      title: "Event & Artist Management", 
-      desc: "Executing premium music concerts, comedy festivals, charity events, product launches, and comprehensive artist development roadmaps." 
-    },
-    { 
-      title: "Customer Experience Enhancement", 
-      desc: "Building customer personas to create holistic experiences that involve senses, thoughts, and actions—driving massive word-of-mouth growth." 
-    },
-    { 
-      title: "AI-Powered Analytics & Marketing", 
-      desc: "Leveraging data-driven insights and omnichannel advertising tools to target campaigns across digital and traditional networks for maximum impact." 
-    },
-    { 
-      title: "Package & Product Design", 
-      desc: "Engineering structural packaging blueprints, concept development schemes, and custom label redesigns to completely reinvent retail shelf presence." 
-    }
-  ];
-
-  // Verified strategic milestones from your company profile records
-  const historicalMilestones = [
-    { 
-      metric: "GWR PARTNER", 
-      label: "GUINNESS WORLD RECORD",
-      contextualDetails: "Activation and execution partner for the highest grossing Nigerian movie production in history, in partnership with Corporate World Entertainment." 
-    },
-    { 
-      metric: "TRACE ECOSYSTEM", 
-      label: "STRATEGIC GLOBAL ALLIANCE",
-      contextualDetails: "Collective live operational partners orchestrating massive afro-urban entertainment, connecting creators, music concerts, and charity events." 
-    },
-    { 
-      metric: "DANGOTE PASTA", 
-      label: "PACKAGING THINK-TANK",
-      contextualDetails: "Core team members responsible for designing and developing the structural concept layout for the new Spaghetti Slim and Standard retail product packaging." 
-    }
+export default function HomePage() {
+  const expertises = [
+    { num: "01", title: "Corporate Branding & Label Layouts", desc: "Complete visual identity transformation. We designed the conceptual blueprints and package layouts for Nigeria's staple food lines like Dangote Pasta." },
+    { num: "02", title: "Video Commercials & Media Campaigns", desc: "High-budget TV commercials and radio jingles engineered to command nationwide consumer attention and drive sales." },
+    { num: "03", title: "Large Scale Events & Tour Logistics", desc: "From sold-out arena music concerts with Trace Global to record-breaking box office film premiere activations." }
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-12 md:py-24 space-y-36">
+    <div className="space-y-32 pb-32">
       
-      {/* 1. HERO ARCHITECTURE SECTION (Droga5 Heavy Conceptual Typography) */}
-      <section className="space-y-8 max-w-5xl">
-        <div className="inline-flex items-center gap-2 border border-brandGreen/30 bg-brandGreen/5 text-brandGreen font-mono text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-sm">
-          <span className="w-1.5 h-1.5 rounded-full bg-brandGreen animate-pulse" />
-          SYSTEM STATUS: ACTIVE // DESIGN MATRIX FOR THE UNCOMMON FUTURE
-        </div>
-        
-        <h1 className="text-5xl md:text-8xl font-black tracking-tighter leading-none uppercase">
-          WE REIGNITE POTENTIAL WITHIN <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-neutral-700">RESTLESS BRANDS.</span>
-        </h1>
-        
-        <p className="text-lg md:text-xl text-neutral-400 max-w-3xl leading-relaxed font-light font-sans">
-          We live in a time where common thinking reigns supreme, valuing predictability over raw potential. 
-          <strong className="text-white font-black"> STAR STATION INC.</strong> is a premier, top-rated innovative management company based in Lagos, Nigeria. We challenge standard paths to stoke uncommon execution.
-        </p>
-        
-        <div className="pt-4">
-          <a href="#contact" className="border border-white/20 hover:border-brandGreen text-xs font-black tracking-widest uppercase px-8 py-4 transition-all duration-300 hover:bg-brandGreen hover:text-black rounded-sm inline-block font-mono">
-            INITIATE COMMUNICATIONS ↗
-          </a>
-        </div>
-      </section>
-
-      {/* 2. CORE HISTORICAL METRICS GRID (Pentagram Asymmetrical Grid Standard) */}
-      <section id="manifesto" className="border-t border-white/10 pt-16 space-y-12">
-        <div className="max-w-md">
-          <span className="text-xs font-mono text-brandRed font-black tracking-widest block mb-2">// PROVEN RECORD VECTORS</span>
-          <h2 className="text-2xl font-black uppercase tracking-tight">STRATEGIC INFRASTRUCTURE MILESTONES</h2>
+      {/* SECTION 1: EYE-CATCHING HERO LANDING GRID */}
+      <section className="relative w-full min-h-[90vh] flex items-center justify-center px-6 overflow-hidden">
+        {/* Background Visual Graphic Layer */}
+        <div className="absolute inset-0 z-0">
+          <Image 
+            src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&q=80" 
+            alt="Star Station Creative Operations Hub Visual"
+            fill
+            className="object-cover opacity-20 scale-105"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0b0c10] via-[#0b0c10]/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0b0c10] via-transparent to-black/50" />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {historicalMilestones.map((milestone, idx) => (
-            <div key={idx} className="bg-neutral-900/30 border border-white/5 p-8 rounded-sm hover:bg-neutral-900/80 hover:border-brandGreen/20 transition-all group relative">
-              <div className="absolute top-0 left-0 w-1 h-0 bg-brandGreen group-hover:h-full transition-all duration-300" />
-              <div className="text-xs font-mono text-neutral-600 font-black tracking-widest mb-6">
-                [DATA_NODE_0{idx + 1}]
-              </div>
-              <div className="text-2xl font-black tracking-tighter text-white uppercase mb-1">
-                {milestone.metric}
-              </div>
-              <div className="text-[10px] font-mono text-brandGreen font-black tracking-widest mb-4">
-                {milestone.label}
-              </div>
-              <p className="text-xs text-neutral-400 font-mono leading-relaxed">
-                {milestone.contextualDetails}
-              </p>
+        <div className="max-w-7xl mx-auto w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-12">
+          <div className="space-y-8 lg:col-span-8">
+            <div className="inline-flex items-center gap-2 border border-white/10 bg-white/[0.02] px-3 py-1.5 font-mono text-[10px] tracking-widest text-[#25D366] uppercase">
+              <span className="w-1.5 h-1.5 bg-[#25D366] rounded-full animate-pulse" /> Top-Rated Creative Agency
             </div>
-          ))}
+            <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-none text-white">
+              WE GROW <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-neutral-200 to-neutral-500">BRANDS</span> & COOPERATE BODIES.
+            </h1>
+            <p className="text-sm md:text-base text-white/60 font-mono max-w-xl leading-relaxed">
+              We help restless brands and major companies clarify their message, re-engineer packaging concepts, and deploy live activation campaigns that win deep consumer loyalty.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 font-mono text-xs font-black tracking-widest">
+              <Link href="/work" className="bg-gradient-to-r from-[#25D366] to-emerald-600 text-black px-8 py-4 text-center hover:brightness-110 shadow-xl shadow-[#25D366]/5 transition-all uppercase">
+                EXPLORE OUR WORK ↗
+              </Link>
+              <Link href="/contact" className="border border-white/10 hover:border-white text-white px-8 py-4 text-center bg-white/[0.01] transition-all uppercase">
+                DISCUSS A BRIEF
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* 3. CAPABILITIES INDEX MATRIX (AKQA Technical Interface Integration) */}
-      <section id="portfolio" className="border-t border-white/10 pt-16 space-y-12">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
-          <div>
-            <span className="text-xs font-mono text-brandGreen font-black tracking-widest block mb-2">// AGENCY OPERATIONS</span>
-            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tight">CORE CAPABILITIES</h2>
-          </div>
-          <p className="text-xs text-neutral-400 font-mono max-w-sm leading-relaxed">
-            Integrating advanced strategy, high-impact traditional production, and digital frameworks to transform brand scale across international parameters.
+      {/* SECTION 2: WHAT WE DO BEST */}
+      <section className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="lg:col-span-4 lg:sticky lg:top-32 space-y-4">
+          <span className="text-xs font-mono text-[#25D366] font-black tracking-widest block uppercase">// CORE CAPABILITIES</span>
+          <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter text-white">WHAT WE DO BEST.</h2>
+          <p className="text-xs text-white/40 font-mono leading-relaxed">
+            From conceptual thinking inside our design rooms down to full production delivery in national marketplaces.
           </p>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {deliverables.map((item, idx) => (
-            <div key={idx} className="border border-white/10 p-8 rounded-sm hover:border-brandGreen transition-all duration-300 group bg-neutral-950 flex flex-col justify-between min-h-[240px]">
-              <div>
-                <div className="flex justify-between items-center mb-6">
-                  <span className="text-[10px] font-mono text-neutral-600 group-hover:text-brandRed font-black transition-colors">
-                    ENGINE_SYS_0{idx + 1}
-                  </span>
-                  <div className="w-1.5 h-1.5 bg-neutral-800 group-hover:bg-brandGreen transition-colors rounded-full" />
-                </div>
-                <h3 className="text-lg font-black uppercase tracking-tight text-white mb-3 group-hover:text-brandGreen transition-colors">
-                  {item.title}
-                </h3>
-              </div>
-              <p className="text-xs text-neutral-400 leading-relaxed font-mono">
-                {item.desc}
-              </p>
+        <div className="lg:col-span-8 border-l border-white/5 space-y-1">
+          {expertises.map((item) => (
+            <div key={item.num} className="p-8 md:p-12 border-b border-white/5 hover:bg-white/[0.01] transition-all relative group">
+              <div className="absolute top-0 left-0 w-[2px] h-0 bg-[#25D366] group-hover:h-full transition-all duration-300" />
+              <div className="font-mono text-xs text-brandRed font-black mb-2">[{item.num}]</div>
+              <h3 className="text-xl md:text-2xl font-black uppercase text-white tracking-tight group-hover:text-[#25D366] transition-colors">{item.title}</h3>
+              <p className="text-xs md:text-sm text-white/50 font-mono mt-3 leading-relaxed">{item.desc}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* 4. CALL TO ACTION CONNECTION GATE (Vaynermedia Deployment Logic) */}
-      <section id="contact" className="border border-white/10 bg-gradient-to-b from-neutral-950 to-neutral-900 p-8 md:p-16 rounded-sm text-center space-y-6 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-24 h-24 bg-brandGreen/5 blur-2xl rounded-full" />
-        
-        <span className="text-xs font-mono text-brandGreen font-black tracking-widest block uppercase">
-          // PIPELINE SYNCHRONIZATION INTERFACE
-        </span>
-        
-        <h2 className="text-3xl md:text-6xl font-black uppercase tracking-tighter max-w-4xl mx-auto leading-none">
-          READY TO ELEVATE ENGAGEMENT AND SHAPE LEGACIES?
-        </h2>
-        
-        <p className="text-xs md:text-sm font-mono text-neutral-400 max-w-2xl mx-auto leading-relaxed">
-          Collaborate with our corporate think-tank team. Whether you are an established corporate brand scaling market capture or an elite creator positioning global activation networks, our system will orchestrate the transformation.
-        </p>
-        
-        <div className="pt-4 flex flex-wrap justify-center gap-4 font-mono">
-          <a href="mailto:trystarstation@gmail.com" className="bg-brandGreen text-black px-8 py-3.5 text-xs font-black tracking-widest uppercase rounded-sm hover:bg-brandRed hover:text-white transition-all">
-            EMAIL DIRECT GATEWAY
-          </a>
-          <a href="tel:+2348091000449" className="border border-white/20 hover:border-white text-white px-8 py-3.5 text-xs font-black tracking-widest uppercase rounded-sm transition-all">
-            CALL HOTLINE VECTORS
-          </a>
+      {/* SECTION 3: OUR SECRET SAUCE (Strategic Narrative Layout) */}
+      <section className="bg-black border-y border-white/5 py-24 px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div className="space-y-6">
+            <span className="text-xs font-mono text-brandRed font-black tracking-widest block uppercase">// STRATEGIC MISSION</span>
+            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter text-white">THE UNCOMMON FUTURE.</h2>
+            <p className="text-xs md:text-sm font-mono text-white/60 leading-relaxed">
+              We live in a world where predictive, boring templates rule supreme. At Star Station, we value potential over predictability. The future belongs to the bold and uncommon. We challenge routine ways of thinking to turn corporate properties into active culture landmarks.
+            </p>
+          </div>
+          <div className="relative h-[300px] border border-white/10 bg-neutral-900 overflow-hidden group">
+            <Image 
+              src="https://images.unsplash.com/photo-1542744094-3a31f103e35f?auto=format&fit=crop&w=800&q=80"
+              alt="Star Station Strategic Execution"
+              fill
+              className="object-cover opacity-40 group-hover:scale-105 transition-transform duration-700"
+            />
+          </div>
         </div>
       </section>
 
