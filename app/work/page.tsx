@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link'; // <-- Add this missing dependency line here
 
 export default function WorkPage() {
   const caseStudies = [
