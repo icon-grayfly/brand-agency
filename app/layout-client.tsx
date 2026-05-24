@@ -34,7 +34,7 @@ export default function LayoutClient({ children }: { children: React.ReactNode }
   return (
     <div className="bg-[#0b0c10] text-white antialiased overflow-x-hidden flex flex-col min-h-screen selection:bg-brandGreen selection:text-black">
       
-      {/* ENTERPRISE INTERACTIVE HEADER LAYER */}
+      {/* ELITE FLOATING HEADER GRID */}
       <header className={`w-full fixed top-0 z-50 transition-all duration-500 border-b ${
         scrolled 
           ? 'bg-[#0b0c10]/80 backdrop-blur-2xl border-white/5 h-20 shadow-xl' 
@@ -49,7 +49,7 @@ export default function LayoutClient({ children }: { children: React.ReactNode }
                 alt="Star Station Logo" 
                 width={26}
                 height={26}
-                className="object-contain group-hover:rotate-12 transition-transform"
+                className="object-contain group-hover:scale-105 transition-transform"
                 priority
               />
             </div>
@@ -87,7 +87,7 @@ export default function LayoutClient({ children }: { children: React.ReactNode }
           </button>
         </div>
 
-        {/* Mobile Dropdown Menu */}
+        {/* Mobile Submenu Interface */}
         {isMenuOpen && (
           <div className="lg:hidden fixed inset-x-0 top-[inherit] bg-[#0b0c10]/95 backdrop-blur-2xl border-b border-white/5 px-6 py-8 space-y-4 text-xs font-mono font-black uppercase tracking-widest">
             {navLinks.map((link) => (
@@ -107,8 +107,8 @@ export default function LayoutClient({ children }: { children: React.ReactNode }
         )}
       </header>
 
-      {/* MARQUEE SPACER UTILITY GRID */}
-      <div className="w-full pt-24 bg-neutral-950 border-b border-white/5 py-3.5 mt-24 overflow-hidden select-none z-10">
+      {/* INFINITE RUNNING MARQUEE SECTION */}
+      <div className="w-full pt-24 bg-neutral-950 border-b border-white/5 py-3.5 mt-24 overflow-hidden select-none z-10 relative">
         <div className="animate-marquee">
           {[...clientsMarquee, ...clientsMarquee].map((client, idx) => (
             <span key={idx} className="mx-10 text-[10px] font-black uppercase tracking-widest font-mono text-white/20 flex items-center gap-3">
@@ -118,31 +118,30 @@ export default function LayoutClient({ children }: { children: React.ReactNode }
         </div>
       </div>
 
-      {/* CORE PAGES PLUG COMPONENT */}
       <main className="flex-grow z-10 relative">
         {children}
       </main>
 
-      {/* HIGH-END METRIC AGENCY FOOTER */}
+      {/* CORE INDUSTRIAL COMPLIANT FOOTER */}
       <footer className="w-full bg-black border-t border-white/5 pt-24 pb-12 relative overflow-hidden z-20">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           
           <div className="space-y-4">
             <div className="font-black text-xl tracking-tighter text-white">STAR STATION<span className="text-brandRed">.</span></div>
             <p className="text-xs text-white/40 font-mono leading-relaxed max-w-xs">
-              Transforming corporate identities, creative content networks, and asset engineering parameters for global marketplace capture.
+              Transforming enterprise structures, design system patterns, and global media campaigns for absolute market capture.
             </p>
-            {/* GLOBAL SOCIAL ICONS MATRIX (High contrast clean minimalist layout style) */}
+            {/* MINIMALIST SOCIAL CHANNELS MATRIX */}
             <div className="flex items-center space-x-4 pt-2">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-none border border-white/10 flex items-center justify-center text-xs font-mono text-white/40 hover:text-brandGreen hover:border-brandGreen transition-all" title="Instagram Profile">IG</a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-none border border-white/10 flex items-center justify-center text-xs font-mono text-white/40 hover:text-brandGreen hover:border-brandGreen transition-all" title="LinkedIn Business">LN</a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-none border border-white/10 flex items-center justify-center text-xs font-mono text-white/40 hover:text-brandGreen hover:border-brandGreen transition-all" title="Twitter / X Channel">X</a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-none border border-white/10 flex items-center justify-center text-xs font-mono text-white/40 hover:text-brandGreen hover:border-brandGreen transition-all" title="YouTube Showcase">YT</a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-8 h-8 border border-white/10 flex items-center justify-center text-xs font-mono text-white/40 hover:text-brandGreen hover:border-brandGreen transition-all" title="Instagram Link">IG</a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-8 h-8 border border-white/10 flex items-center justify-center text-xs font-mono text-white/40 hover:text-brandGreen hover:border-brandGreen transition-all" title="LinkedIn Business Profile">LN</a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="w-8 h-8 border border-white/10 flex items-center justify-center text-xs font-mono text-white/40 hover:text-brandGreen hover:border-brandGreen transition-all" title="Twitter Channel">X</a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="w-8 h-8 border border-white/10 flex items-center justify-center text-xs font-mono text-white/40 hover:text-brandGreen hover:border-brandGreen transition-all" title="YouTube Showcase">YT</a>
             </div>
           </div>
           
           <div className="space-y-3">
-            <h4 className="text-xs font-black uppercase tracking-widest text-brandGreen font-mono">// OPERATIONAL HUBS</h4>
+            <h4 className="text-xs font-black uppercase tracking-widest text-brandGreen font-mono">// HEADQUARTERS HUB</h4>
             <p className="text-xs text-white/60 font-mono leading-relaxed">
               2a Oluwatosin Street<br />
               Oral Estate, Lekki-Epe Expressway,<br />
@@ -151,7 +150,7 @@ export default function LayoutClient({ children }: { children: React.ReactNode }
           </div>
           
           <div className="space-y-3">
-            <h4 className="text-xs font-black uppercase tracking-widest text-white font-mono">// PIPELINE SYNC</h4>
+            <h4 className="text-xs font-black uppercase tracking-widest text-white font-mono">// SECURE CHANNELS</h4>
             <p className="text-xs text-white/60 font-mono leading-relaxed">
               trystarstation@gmail.com<br />
               +234 809 100 0449<br />
@@ -162,28 +161,28 @@ export default function LayoutClient({ children }: { children: React.ReactNode }
           <div className="space-y-3">
             <h4 className="text-xs font-black uppercase tracking-widest text-brandRed font-mono">// SECURITY ACCESS</h4>
             <p className="text-xs text-white/40 font-mono italic leading-relaxed">
-              Enterprise layer safeguarded via edge token authentication networks globally.
+              Operational network monitored via secure, automated SSL handshake layers globally.
             </p>
           </div>
 
         </div>
 
         <div className="max-w-7xl mx-auto px-6 border-t border-white/5 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[9px] font-black uppercase tracking-widest text-white/30 font-mono">
-          <p>&copy; 2026 STAR STATION INC. DATA PIPELINES SECURED VIA COMPLIANT LET'S ENCRYPT MESH LAYER.</p>
+          <p>&copy; 2026 STAR STATION INC. NETWORK FULLY SYNCED AND AUTHENTICATED.</p>
           <div className="flex space-x-6">
-            <a href="#" className="hover:text-brandGreen transition-colors">COMPLIANCE_CHARTER</a>
-            <a href="#" className="hover:text-brandRed transition-colors">SSL_AUTHENTICATOR</a>
+            <a href="#" className="hover:text-brandGreen transition-colors">COMPLIANCE_MAP</a>
+            <a href="#" className="hover:text-brandRed transition-colors">SSL_CREDENTIALS</a>
           </div>
         </div>
       </footer>
 
-      {/* WHATSAPP FLOAT CHATBOT SYSTEM */}
+      {/* WHATSAPP FLOAT CHATBOT WIDGET (Appears dynamically across all child routes) */}
       <a 
         href="https://wa.me/2348091000449?text=Hi%20Star%20Station,%20we%20are%20looking%20to%20engage%20your%20innovative%20management%20and%20branding%20infrastructure."
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-gradient-to-r from-emerald-500 to-green-600 text-black px-4 py-3 rounded-none shadow-2xl shadow-emerald-500/20 hover:scale-105 transition-all duration-300 font-mono text-[11px] font-black group tracking-wider"
-        aria-label="Connect via WhatsApp Channel"
+        className="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-gradient-to-r from-emerald-500 to-green-600 text-black px-4 py-3 rounded-none shadow-2xl shadow-emerald-500/20 hover:scale-105 transition-all duration-300 font-mono text-[11px] font-black tracking-wider group"
+        aria-label="Connect via WhatsApp Corporate Channel"
       >
         <span className="relative flex h-2 w-2">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-75"></span>
